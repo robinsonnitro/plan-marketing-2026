@@ -962,7 +962,7 @@ function renderTable() {
   for (let m = 0; m < 12; m++) {
     const budget = getBudget(m);
     const rowTotal = getRowTotal(m);
-    const saldo = budget - rowTotal;
+    
     
     html += `<tr>`;
     html += `<td class="month-cell">${MONTHS[m]}<br><span class="season-tag season-${SEASONS[m]}">${SEASON_LABELS[SEASONS[m]]}</span></td>`;
@@ -981,10 +981,10 @@ function renderTable() {
     }
     
     const totalStyle = rowTotal > budget ? 'color:var(--red)' : 'color:var(--green)';
-    const saldoStyle = saldo < 0 ? 'color:var(--red)' : 'color:var(--text-dim)';
+    
     
     html += `<td style="border-left:2px solid var(--border); font-weight:700; ${totalStyle}">${fmtShort(rowTotal)}</td>`;
-    html += `<td style="${saldoStyle}; font-weight:600;">${fmtShort(saldo)}</td>`;
+    
     html += `</tr>`;
   }
   
@@ -1001,7 +1001,7 @@ function renderTable() {
   
   const grandTotal = getGrandTotal();
   const totalBudget = getTotalBudget();
-  const grandSaldo = totalBudget - grandTotal;
+  
   
   html += `<td style="border-left:2px solid var(--border); color:var(--green);">${fmtShort(grandTotal)}</td>`;
   
@@ -1089,15 +1089,15 @@ function updateCell(input) {
   const cells = row.querySelectorAll('td');
   const budget = getBudget(m);
   const rowTotal = getRowTotal(m);
-  const saldo = budget - rowTotal;
+  
   
   // Update total and saldo columns (last 2 tds)
-  const totalTd = cells[cells.length - 2];
-  const saldoTd = cells[cells.length - 1];
+  const totalTd = cells[cells.length - 1];
+  
   totalTd.textContent = fmtShort(rowTotal);
   totalTd.style.color = rowTotal > budget ? 'var(--red)' : 'var(--green)';
-  saldoTd.textContent = fmtShort(saldo);
-  saldoTd.style.color = saldo < 0 ? 'var(--red)' : 'var(--text-dim)';
+  
+  
   
   // Refresh total row
   renderTable();
@@ -1119,14 +1119,14 @@ function resetAll() {
 function exportCSV() {
   let csv = 'MES,META VENTA,PPTO MKT ('+budgetPct+'%)';
   CHANNELS.forEach(ch => csv += ',' + ch.name);
-  csv += ',TOTAL ASIGNADO,SALDO\n';
+  csv += ',TOTAL ASIGNADO\n';
   
   for (let m = 0; m < 12; m++) {
     csv += MONTHS[m] + ',' + METAS[m] + ',' + getBudget(m);
     for (let c = 0; c < CHANNELS.length; c++) {
       csv += ',' + channelValues[m][c];
     }
-    csv += ',' + getRowTotal(m) + ',' + (getBudget(m) - getRowTotal(m));
+    csv += ',' + getRowTotal(m);
     csv += '\n';
   }
   

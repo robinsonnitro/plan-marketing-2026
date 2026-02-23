@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Marketing 2026 - Radisson & Park Inn Puerto Varas</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0f14;
+  --surface: #141820;
+  --surface2: #1a1f2b;
+  --border: #2a3040;
+  --text: #e8eaf0;
+  --text-dim: #8891a5;
+  --accent: #3b82f6;
+  --accent2: #6366f1;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+  --cyan: #06b6d4;
+  --pink: #ec4899;
+  --radisson: #1e40af;
+  --parkinn: #059669;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.badge-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-radisson { background: rgba(30,64,175,0.2); color: #60a5fa; border: 1px solid rgba(30,64,175,0.4); }
+.badge-parkinn { background: rgba(5,150,105,0.2); color: #34d399; border: 1px solid rgba(5,150,105,0.4); }
+.badge-budget { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn:hover { background: var(--border); }
+.btn-accent { background: var(--accent); border-color: var(--accent); }
+.btn-accent:hover { background: #2563eb; }
+
+/* Summary cards */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.summary-card.total::before { background: linear-gradient(90deg, var(--accent), var(--cyan)); }
+.summary-card.monthly::before { background: linear-gradient(90deg, var(--green), var(--cyan)); }
+.summary-card.high::before { background: linear-gradient(90deg, var(--amber), var(--pink)); }
+.summary-card.low::before { background: linear-gradient(90deg, var(--accent2), var(--pink)); }
+
+.summary-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+}
+
+.summary-sub {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+}
+
+/* Percentage control */
+.pct-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.pct-control label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.pct-input {
+  width: 80px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--amber);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pct-input:focus { outline: none; border-color: var(--accent); }
+
+/* Main content */
+.main-content {
+  padding: 1.5rem 2.5rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title .icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* Table styles */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  min-width: 1600px;
+}
+
+thead th {
+  background: var(--surface2);
+  padding: 0.75rem 0.6rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+thead th.month-col {
+  text-align: left;
+  min-width: 100px;
+}
+
+thead th.channel-header {
+  font-size: 0.65rem;
+  padding: 0.5rem 0.4rem;
+}
+
+tbody td {
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid rgba(42,48,64,0.5);
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+}
+
+tbody tr:hover { background: rgba(59,130,246,0.05); }
+
+tbody td.month-cell {
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text);
+  padding-left: 1rem;
+  min-width: 110px;
+}
+
+tbody td.meta-cell {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+tbody td.budget-cell {
+  color: var(--amber);
+  font-weight: 700;
+  background: rgba(245,158,11,0.05);
+}
+
+.editable-cell {
+  background: rgba(99,102,241,0.08);
+  cursor: pointer;
+  position: relative;
+  min-width: 90px;
+}
+
+.editable-cell:hover {
+  background: rgba(99,102,241,0.15);
+}
+
+.editable-cell input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 0;
+  outline: none;
+}
+
+.editable-cell input:focus {
+  color: var(--accent);
+}
+
+.total-row td {
+  background: var(--surface2) !important;
+  font-weight: 700;
+  border-top: 2px solid var(--border);
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.total-row td.budget-cell {
+  color: var(--amber);
+}
+
+/* Channel group headers */
+.ch-group {
+  font-size: 0.6rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+}
+
+.ch-digital { background: rgba(59,130,246,0.2); color: #93c5fd; }
+.ch-tradicional { background: rgba(236,72,153,0.2); color: #f9a8d4; }
+.ch-eventos { background: rgba(34,197,94,0.2); color: #86efac; }
+.ch-ota { background: rgba(245,158,11,0.2); color: #fde68a; }
+.ch-contenido { background: rgba(6,182,212,0.2); color: #67e8f9; }
+.ch-cyber { background: rgba(239,68,68,0.2); color: #fca5a5; }
+
+/* Season indicator */
+.season-tag {
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.season-alta { background: rgba(34,197,94,0.2); color: #4ade80; }
+.season-media { background: rgba(245,158,11,0.2); color: #fbbf24; }
+.season-baja { background: rgba(239,68,68,0.15); color: #f87171; }
+
+/* Notes section */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.note-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.note-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--cyan);
+}
+
+.note-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.note-card li {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  padding: 0.3rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.note-card li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Validation bar */
+.validation-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.validation-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-ok { background: var(--green); box-shadow: 0 0 6px rgba(34,197,94,0.5); }
+.dot-warn { background: var(--amber); box-shadow: 0 0 6px rgba(245,158,11,0.5); }
+.dot-err { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,0.5); }
+
+/* Calendar strip */
+.calendar-strip {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.cal-month {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cal-month:hover {
+  border-color: var(--accent);
+  background: var(--surface2);
+}
+
+.cal-month.active {
+  border-color: var(--accent);
+  background: rgba(59,130,246,0.1);
+}
+
+.cal-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.cal-amount {
+  font-size: 0.72rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+.cal-events {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem 2.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+@media print {
+  .header { position: static; }
+  .controls { display: none; }
+  body { background: white; color: #111; }
+  table { font-size: 0.65rem; }
+}
+
+@media (max-width: 768px) {
+  .summary-grid { grid-template-columns: 1fr 1fr; }
+  .calendar-strip { grid-template-columns: repeat(4, 1fr); }
+  .header { padding: 1.5rem 1rem; }
+  .main-content { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>📊 Plan de Marketing & Presupuesto 2026</h1>
+      <div class="header-subtitle">Hotel Radisson Puerto Varas (98 hab.) · Park Inn by Radisson (86 hab.) — Presupuesto consolidado</div>
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="resetAll()">↺ Resetear</button>
+      <button class="btn btn-accent" onclick="exportCSV()">⬇ Exportar CSV</button>
+    </div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-radisson">Radisson Puerto Varas · 98 Hab</span>
+    <span class="badge badge-parkinn">Park Inn by Radisson · 86 Hab</span>
+    <span class="badge badge-budget">1% venta anual · Redistribuido: -60% en alta, +60% en baja</span>
+  </div>
+</div>
+
+<div class="pct-control">
+  <label>% sobre venta mensual destinado a Marketing:</label>
+  <input type="number" class="pct-input" id="pctInput" value="1.0" min="0.1" max="15" step="0.1" onchange="recalcAll()">
+  <span style="font-size:0.78rem; color:var(--text-dim)">% &nbsp;|&nbsp; El total anual se redistribuye: menos en alta (ene-feb), más en baja (mar-ago) para generar reservas futuras</span>
+</div>
+
+<div class="summary-grid" id="summaryGrid">
+  <!-- Populated by JS -->
+</div>
+
+<div class="main-content">
+
+  <div class="section-title">
+    <div class="icon" style="background:rgba(59,130,246,0.15);">📅</div>
+    Calendario de Inversión Mensual
+  </div>
+  <div class="calendar-strip" id="calendarStrip"></div>
+
+  <div id="validationBar" class="validation-bar"></div>
+
+  <div class="section-title">
+    <div class="icon" style="background:rgba(245,158,11,0.15);">💰</div>
+    Presupuesto de Marketing por Canal — Distribución Mensual (Editable)
+  </div>
+  <p style="font-size:0.78rem; color:var(--text-dim); margin-bottom:1rem;">
+    Haz clic en cualquier celda de los canales para modificar los montos. Los totales se recalculan automáticamente. Los montos están en CLP.
+  </p>
+
+  <div class="table-wrapper">
+    <table id="mainTable">
+      <thead>
+        <tr>
+          <th class="month-col" rowspan="2">MES</th>
+          <th rowspan="2" style="min-width:110px;">META VENTA<br>MENSUAL</th>
+          <th rowspan="2" style="min-width:100px; color:var(--amber);">PPTO MKT<br>REDISTRIBUIDO</th>
+          <th colspan="4" style="border-left:2px solid var(--border);"><span class="ch-group ch-digital">DIGITAL</span></th>
+          <th colspan="3" style="border-left:2px solid var(--border);"><span class="ch-group ch-ota">OTA & METASEARCH</span></th>
+          <th colspan="1" style="border-left:2px solid var(--border);"><span class="ch-group ch-contenido">APOYO RRSS</span></th>
+          <th colspan="2" style="border-left:2px solid var(--border);"><span class="ch-group ch-tradicional">TRADICIONAL</span></th>
+          <th colspan="2" style="border-left:2px solid var(--border);"><span class="ch-group ch-eventos">EVENTOS & PRESENCIA</span></th>
+          <th colspan="2" style="border-left:2px solid var(--border);"><span class="ch-group ch-cyber">CAMPAÑAS ESPECIALES</span></th>
+          <th rowspan="2" style="border-left:2px solid var(--border); min-width:90px;">TOTAL<br>ASIGNADO</th>
+          <th rowspan="2" style="min-width:80px;">SALDO</th>
+        </tr>
+        <tr>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Google Ads<br>(SEM)</th>
+          <th class="channel-header">Meta Ads<br>(FB/IG)</th>
+          <th class="channel-header">SEO &<br>Web</th>
+          <th class="channel-header">Email<br>Marketing</th>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Google<br>Hotel Ads</th>
+          <th class="channel-header">TripAdvisor<br>Plus</th>
+          <th class="channel-header">OTA Ads<br>Booking/Exp</th>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Producción<br>Apoyo RRSS</th>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Revistas &<br>Prensa</th>
+          <th class="channel-header">Material<br>POP/Impreso</th>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Ferias &<br>Eventos</th>
+          <th class="channel-header">Familiariz.<br>& Hosting</th>
+          <th class="channel-header" style="border-left:2px solid var(--border);">Cyber/<br>Campañas</th>
+          <th class="channel-header">Temporada<br>Baja Promo</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="margin-top:2rem;">
+    <div class="icon" style="background:rgba(6,182,212,0.15);">📋</div>
+    Notas Estratégicas por Canal y Fechas Clave
+  </div>
+
+  <div class="notes-grid">
+    <div class="note-card">
+      <h3>🧠 Estrategia de Redistribución</h3>
+      <ul>
+        <li><strong>Principio:</strong> Lo que publicitas hoy genera reservas para el futuro</li>
+        <li><strong>Ene-Feb (−60%):</strong> Demanda orgánica, el hotel se llena solo. Mínima inversión en mantención de marca y contenido</li>
+        <li><strong>Mar-Ago (+40-60%):</strong> Máxima inversión digital. Campañas para llenar los meses siguientes (ventana de reserva 30-90 días)</li>
+        <li><strong>Jun (+50%):</strong> CyberDay genera ventas para julio-septiembre</li>
+        <li><strong>Ago (+50%):</strong> Travel Sale (CCS/ACHET/FEDETUR) genera ventas para Fiestas Patrias y verano</li>
+        <li><strong>Oct (+10%):</strong> CyberMonday genera ventas para noviembre-febrero</li>
+        <li><strong>Nov-Dic (−20-40%):</strong> Demanda creciente, reducir gradualmente el push pagado</li>
+        <li><strong>Total anual:</strong> Se mantiene el 1% de la venta anual, solo cambia la distribución mensual</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>💻 Digital (Google Ads + Meta Ads)</h3>
+      <ul>
+        <li><strong>Google Ads $0 en Ene-Feb:</strong> Demanda orgánica cubre la temporada alta</li>
+        <li><strong>Meta Ads Ene:</strong> ~US$2.574 (92% del ppto mensual). Feb: ~US$1.700 (56%)</li>
+        <li>Meta Ads Mar-Dic: 18-24% del ppto — canal principal de generación de demanda</li>
+        <li>SEO reducido a 2-3% (mantenimiento). Email Marketing reducido a 0-2%</li>
+        <li>El grueso del presupuesto de contenido/RRSS migra a inversión digital directa</li>
+        <li>Segmentar: Radisson → parejas/premium · Park Inn → familias/grupos</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>🏨 OTA & Metasearch</h3>
+      <ul>
+        <li>Google Hotel Ads: Canal directo con mejor ROI, presencia permanente</li>
+        <li>TripAdvisor Plus: Suscripción anual, máxima visibilidad reviews</li>
+        <li>Booking Ads / Expedia TravelAds: Visibilidad extra en temporada baja</li>
+        <li>Meta de reducir comisión OTA promedio del 18% al 15% vía canal directo</li>
+        <li>Medir CPA por canal y optimizar mensualmente</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>📸 Producción de Apoyo RRSS</h3>
+      <ul>
+        <li><strong>Persona contratada ($900K/mes):</strong> Cubre contenido diario, community management y gestión orgánica — costo NO incluido en este presupuesto</li>
+        <li>"Producción Apoyo RRSS" (2-4%): Sesiones fotográficas profesionales, video/drone, influencers</li>
+        <li>Este presupuesto complementa con material de producción externa que la persona interna no puede generar sola</li>
+        <li>Blog corporativo + integración Chile Experiencia para contenido de aventura</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>📰 Tradicional (Revistas & Material)</h3>
+      <ul>
+        <li><strong>Presupuesto aumentado (6-10%):</strong> Revistas In-LAN, Viajes & Turismo, Caras, publicaciones regionales</li>
+        <li>Prensa: Notas de prensa en temporadas clave + lanzamientos</li>
+        <li>Material POP: Folletos, tarjetas, señalética promocional en lobbies</li>
+        <li>Concentrar inversión pre-temporada (sept-nov y abril-mayo)</li>
+        <li>Mayor presencia en medios tradicionales para complementar digital</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>🎪 Eventos & Campañas Especiales</h3>
+      <ul>
+        <li>Ferias: VYVA, FIT, Expoturismo, ferias corporativas Santiago</li>
+        <li>Fam trips: Invitar agencias y operadores clave (2 al año mínimo)</li>
+        <li><strong>CyberDay (Junio):</strong> Costo fijo $500.000 — Ofertas agresivas para llenar Jul-Sep</li>
+        <li><strong>Travel Sale (Agosto):</strong> Costo fijo $500.000 — CCS+ACHET+FEDETUR, paquetes para Fiestas Patrias y verano</li>
+        <li><strong>CyberMonday (Octubre):</strong> Costo fijo $500.000 — Paquetes para Nov-Feb</li>
+        <li><strong>Black Friday (Noviembre):</strong> Costo fijo $500.000 — Early bird verano</li>
+        <li><strong>Total fijo Cyber:</strong> $2.000.000 CLP anuales (4 eventos, piso mínimo garantizado)</li>
+        <li>Temporada baja: Paquetes especiales, Cocktail & Relax, experiencias</li>
+        <li>Hosting VIP: Eventos para corporativos y operadores en el hotel</li>
+      </ul>
+    </div>
+
+    <div class="note-card">
+      <h3>⚙️ Stack Tecnológico & Plataformas</h3>
+      <ul>
+        <li><strong>GoHighLevel:</strong> CRM central + chatbot IA + automaciones + funnels + email/SMS/WhatsApp integrado</li>
+        <li><strong>Vercel + v0:</strong> Hosting + desarrollo ágil de landing pages, micrositios y apps web</li>
+        <li><strong>APIs IA (OpenAI/Claude):</strong> Chatbots recepción virtual, generación contenido, análisis datos</li>
+        <li><strong>WhatsApp Business API:</strong> Canal directo huéspedes, confirmaciones, upselling post-reserva</li>
+        <li><strong>Zapier/Make:</strong> Integraciones Oracle PMS ↔ GHL ↔ Sheets ↔ WhatsApp ↔ Booking</li>
+        <li><strong>SEMrush:</strong> SEO, keywords "hotel Puerto Varas", análisis competencia</li>
+        <li>Costos herramientas son fijos mensuales, se suman al presupuesto variable de marketing</li>
+        <li>Revisión trimestral: eliminar lo que no se usa, evaluar nuevas herramientas</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:2rem;">
+    <div class="icon" style="background:rgba(99,102,241,0.15);">⚙️</div>
+    Herramientas & Plataformas Digitales — Costos Fijos Mensuales (Editable)
+  </div>
+  <p style="font-size:0.78rem; color:var(--text-dim); margin-bottom:1rem;">
+    Costos fijos de suscripciones, APIs y plataformas digitales. Estos montos se suman al presupuesto de marketing como gastos de infraestructura tecnológica. Haz clic en cualquier monto para editarlo. TC referencial: 1 USD ≈ $950 CLP.
+  </p>
+
+  <div class="table-wrapper">
+    <table id="toolsTable">
+      <thead>
+        <tr>
+          <th style="text-align:left; min-width:200px;">HERRAMIENTA / PLATAFORMA</th>
+          <th style="min-width:100px;">CATEGORÍA</th>
+          <th style="min-width:120px;">COSTO MENSUAL<br>(CLP)</th>
+          <th style="min-width:100px;">COSTO ANUAL<br>(CLP)</th>
+          <th style="min-width:90px;">REFERENCIA<br>USD/MES</th>
+          <th style="text-align:left; min-width:300px;">DETALLE / USO</th>
+        </tr>
+      </thead>
+      <tbody id="toolsBody">
+      </tbody>
+    </table>
+  </div>
+
+  <div id="toolsSummary" class="validation-bar" style="margin-top:1rem;"></div>
+
+</div>
+
+<div class="footer">
+  Plan de Marketing 2026 — Hotel Radisson Puerto Varas & Park Inn by Radisson Puerto Varas — Gerencia Comercial<br>
+  Presupuesto variable (canales) + costos fijos (herramientas) · Todos los montos editables · Exportable a CSV · Última actualización: Febrero 2026
+</div>
+
+<script>
+// ==================== DATA ====================
+const MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const SEASONS = ['alta','alta','media','baja','baja','baja','media','baja','media','media','alta','alta'];
+const SEASON_LABELS = { alta: 'Alta', media: 'Media', baja: 'Baja' };
+
+// Metas mensuales 2026 (CLP)
+const METAS = [
+  635755578, 693785495, 527380322, 352820612, 255894256, 269670990,
+  352579107, 253644943, 287834159, 449362702, 580717000, 431000000
+];
+
+const TOTAL_ANUAL = METAS.reduce((a,b) => a+b, 0);
+
+// Redistribution weights: desviar presupuesto de temporada alta a baja
+// Lógica: en ene/feb la demanda es orgánica, no necesitas gastar.
+// En temporada baja inviertes HOY para llenar MAÑANA.
+// Peso 1.0 = proporcional a la venta. <1 = menos que proporcional. >1 = más que proporcional.
+const BUDGET_WEIGHTS = [
+  0.40,  // Ene: alta, demanda orgánica → bajar fuerte
+  0.40,  // Feb: alta, demanda orgánica → bajar fuerte
+  1.20,  // Mar: inicio baja, empujar para abril-junio
+  1.40,  // Abr: baja, invertir para llenar mayo-julio
+  1.60,  // May: baja profunda, máximo push para junio-agosto
+  1.50,  // Jun: baja + CyberDay, generar demanda julio-sept
+  1.30,  // Jul: vacaciones invierno, empujar para agosto-oct
+  1.50,  // Ago: baja, invertir fuerte para sept-nov
+  1.20,  // Sep: media, fiestas patrias, empujar para oct-dic
+  1.10,  // Oct: media, CyberMonday, empujar para nov-feb
+  0.80,  // Nov: pre-alta, ya hay demanda creciendo
+  0.60   // Dic: alta, demanda fuerte → bajar
+];
+
+// Calcular presupuestos redistribuidos
+function getRedistributedBudgets() {
+  const totalAnnualBudget = Math.round(TOTAL_ANUAL * budgetPct / 100);
+  // Calcular base proporcional y aplicar peso
+  const rawWeighted = METAS.map((m, i) => m * BUDGET_WEIGHTS[i]);
+  const totalWeighted = rawWeighted.reduce((a,b) => a+b, 0);
+  return rawWeighted.map(w => Math.round((w / totalWeighted) * totalAnnualBudget));
+}
+
+// Channel keys and names
+const CHANNELS = [
+  { key: 'google_ads',    name: 'Google Ads (SEM)',      group: 'digital' },
+  { key: 'meta_ads',      name: 'Meta Ads (FB/IG)',      group: 'digital' },
+  { key: 'seo_web',       name: 'SEO & Web',             group: 'digital' },
+  { key: 'email_mkt',     name: 'Email Marketing',       group: 'digital' },
+  { key: 'google_hotel',  name: 'Google Hotel Ads',      group: 'ota' },
+  { key: 'tripadvisor',   name: 'TripAdvisor Plus',      group: 'ota' },
+  { key: 'ota_ads',       name: 'OTA Ads Booking/Exp',   group: 'ota' },
+  { key: 'prod_rrss',     name: 'Producción Apoyo RRSS', group: 'contenido' },
+  { key: 'revistas',      name: 'Revistas & Prensa',     group: 'tradicional' },
+  { key: 'material_pop',  name: 'Material POP/Impreso',  group: 'tradicional' },
+  { key: 'ferias',        name: 'Ferias & Eventos',      group: 'eventos' },
+  { key: 'famtrips',      name: 'Familiariz. & Hosting', group: 'eventos' },
+  { key: 'cyber',         name: 'Cyber/Campañas',        group: 'cyber' },
+  { key: 'temp_baja',     name: 'Temporada Baja Promo',  group: 'cyber' }
+];
+
+// Events per month
+const EVENTS = [
+  'Verano peak',
+  'Verano, San Valentín',
+  'Cierre verano',
+  'Semana Santa',
+  'Prep. CyberDay',
+  'CyberDay 💰$500K',
+  'Vacaciones invierno',
+  'Travel Sale 💰$500K',
+  'Fiestas Patrias',
+  'CyberMonday 💰$500K',
+  'Black Friday 💰$500K',
+  'Navidad, Año Nuevo'
+];
+
+// Default distribution percentages per channel per month (of monthly budget)
+// Rows = months, Cols = channels (same order as CHANNELS array)
+// 14 Canales (RRSS eliminado — persona interna $900K/mes cubre contenido diario RRSS)
+// GoogleAds, MetaAds, SEO, Email, GHotelAds, TripAdv, OTAAds, ProdApoyoRRSS, Revistas, POP, Ferias, FamTrips, Cyber, TempBaja
+const DEFAULT_PCT = [
+  // Ene: ALTA - Google $0, Meta real ~US$2.574 (92% ppto → ~US$2.572)
+  [0, 92, 0, 0,  2, 0, 0,  1, 2, 1, 0, 0, 0, 2],
+  // Feb: ALTA - Google $0, Meta real ~US$1.700 (56% ppto → ~US$1.708)
+  [0, 56, 2, 0,  3, 2, 2,  3, 9, 5, 3, 3, 0, 12],
+  // Mar: media, activar Google + Meta fuerte, subir tradicional
+  [16, 24, 3, 2,  4, 2, 3,  3, 8, 5, 5, 4, 0, 21],
+  // Abr: baja, Semana Santa, digital agresivo + tradicional
+  [16, 24, 3, 2,  3, 2, 2,  3, 8, 5, 3, 4, 5, 20],
+  // May: baja, prep CyberDay, digital + cyber fuerte
+  [14, 22, 3, 2,  3, 2, 2,  2, 6, 4, 3, 3, 20, 14],
+  // Jun: CyberDay!! concentrar en cyber + Meta
+  [12, 18, 2, 2,  3, 2, 2,  2, 4, 3, 3, 2, 33, 12],
+  // Jul: vacaciones invierno, Meta + Google fuerte + tradicional
+  [16, 24, 3, 2,  4, 2, 3,  3, 7, 4, 5, 4, 0, 23],
+  // Ago: Travel Sale, digital + cyber + tradicional
+  [12, 20, 3, 2,  3, 2, 2,  2, 6, 4, 3, 3, 22, 16],
+  // Sep: Fiestas Patrias, Meta fuerte + eventos + tradicional
+  [15, 22, 3, 2,  4, 2, 3,  3, 8, 5, 6, 4, 5, 18],
+  // Oct: CyberMonday, Meta + cyber dominan
+  [13, 20, 3, 2,  3, 2, 3,  2, 6, 4, 5, 4, 22, 11],
+  // Nov: Black Friday, Meta fuerte + tradicional + cyber
+  [14, 22, 3, 2,  4, 2, 3,  3, 8, 5, 5, 4, 15, 10],
+  // Dic: alta, Meta moderado, más presencia física y tradicional
+  [10, 20, 3, 2,  4, 2, 3,  4, 8, 5, 8, 6, 0, 25]
+];
+
+// State: actual values (CLP amounts per channel per month)
+let channelValues = [];
+let budgetPct = 1.0;
+
+// Fixed costs: Cyber events $500,000 CLP each
+// CyberDay (Junio), CyberMonday (Octubre), Black Friday (Noviembre)
+const CYBER_EVENTS = {
+  5:  { name: 'CyberDay Chile',    cost: 500000 },
+  7:  { name: 'Travel Sale Chile', cost: 500000 },
+  9:  { name: 'CyberMonday Chile', cost: 500000 },
+  10: { name: 'Black Friday',      cost: 500000 }
+};
+const CYBER_CHANNEL_IDX = 12; // Index of 'Cyber/Campañas' in 14-channel array
+
+function initValues() {
+  budgetPct = parseFloat(document.getElementById('pctInput').value) || 1.0;
+  channelValues = [];
+  const budgets = getRedistributedBudgets();
+  for (let m = 0; m < 12; m++) {
+    const budget = budgets[m];
+    const row = [];
+    for (let c = 0; c < CHANNELS.length; c++) {
+      row.push(Math.round(budget * DEFAULT_PCT[m][c] / 100));
+    }
+    // Enforce fixed Cyber event cost as minimum
+    if (CYBER_EVENTS[m]) {
+      row[CYBER_CHANNEL_IDX] = Math.max(row[CYBER_CHANNEL_IDX], CYBER_EVENTS[m].cost);
+    }
+    channelValues.push(row);
+  }
+}
+
+function getBudget(m) {
+  return getRedistributedBudgets()[m];
+}
+
+function getRowTotal(m) {
+  return channelValues[m].reduce((a,b) => a+b, 0);
+}
+
+function getColTotal(c) {
+  return channelValues.reduce((sum, row) => sum + row[c], 0);
+}
+
+function getGrandTotal() {
+  return channelValues.reduce((sum, row) => sum + row.reduce((a,b) => a+b, 0), 0);
+}
+
+function getTotalBudget() {
+  return getRedistributedBudgets().reduce((a,b) => a+b, 0);
+}
+
+function fmt(n) {
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+  if (n >= 1e3) return '$' + (n/1e3).toFixed(0) + 'K';
+  return '$' + n.toLocaleString('es-CL');
+}
+
+function fmtFull(n) {
+  return '$' + Math.round(n).toLocaleString('es-CL');
+}
+
+function fmtShort(n) {
+  return Math.round(n).toLocaleString('es-CL');
+}
+
+// ==================== RENDER ====================
+function renderSummary() {
+  const budgets = getRedistributedBudgets();
+  const totalBudget = budgets.reduce((a,b) => a+b, 0);
+  const totalAssigned = getGrandTotal();
+  const maxBudget = Math.max(...budgets);
+  const maxIdx = budgets.indexOf(maxBudget);
+  const minBudget = Math.min(...budgets);
+  const minIdx = budgets.indexOf(minBudget);
+  
+  // Compare vs flat distribution
+  const flatJan = Math.round(METAS[0] * budgetPct / 100);
+  const flatMay = Math.round(METAS[4] * budgetPct / 100);
+  const redirJan = budgets[0];
+  const redirMay = budgets[4];
+
+  document.getElementById('summaryGrid').innerHTML = `
+    <div class="summary-card total">
+      <div class="summary-label">Presupuesto MKT Anual (${budgetPct}%)</div>
+      <div class="summary-value" style="color:var(--amber);">${fmtFull(totalBudget)}</div>
+      <div class="summary-sub">Meta venta anual: ${fmtFull(TOTAL_ANUAL)}</div>
+    </div>
+    <div class="summary-card monthly">
+      <div class="summary-label">Mes Mayor Inversión</div>
+      <div class="summary-value" style="color:var(--green);">${fmtFull(maxBudget)}</div>
+      <div class="summary-sub">${MONTHS[maxIdx]} — push para llenar futuro</div>
+    </div>
+    <div class="summary-card high">
+      <div class="summary-label">Ene/Feb (Alta) → Reducido</div>
+      <div class="summary-value" style="color:var(--pink);">${fmtFull(redirJan)}</div>
+      <div class="summary-sub">vs ${fmtFull(flatJan)} sin redistribuir (−${Math.round((1 - redirJan/flatJan)*100)}%)</div>
+    </div>
+    <div class="summary-card low">
+      <div class="summary-label">Mayo (Baja) → Aumentado</div>
+      <div class="summary-value" style="color:var(--cyan);">${fmtFull(redirMay)}</div>
+      <div class="summary-sub">vs ${fmtFull(flatMay)} sin redistribuir (+${Math.round((redirMay/flatMay - 1)*100)}%)</div>
+    </div>
+    <div class="summary-card" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--amber));"></div>
+      <div class="summary-label">Costos Fijos Cyber (4 eventos)</div>
+      <div class="summary-value" style="color:var(--red);">$2.000.000</div>
+      <div class="summary-sub">CyberDay + Travel Sale + CyberMonday + Black Friday ($500K c/u)</div>
+    </div>
+    <div class="summary-card" style="position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--green));"></div>
+      <div class="summary-label">Personal MKT + Herramientas (NO incluido)</div>
+      <div class="summary-value" style="color:var(--accent2);">$17.532.000/año</div>
+      <div class="summary-sub">Persona RRSS: $900K/mes ($10.8M/año) + Herramientas: $561K/mes ($6.7M/año)</div>
+    </div>
+  `;
+}
+
+function renderCalendar() {
+  const html = METAS.map((meta, i) => {
+    const budget = getBudget(i);
+    return `
+      <div class="cal-month">
+        <div class="cal-name">${MONTHS[i].substring(0,3)}</div>
+        <div class="cal-amount">${fmt(budget)}</div>
+        <div class="cal-events">${EVENTS[i]}</div>
+        <div class="season-tag season-${SEASONS[i]}">${SEASON_LABELS[SEASONS[i]]}</div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('calendarStrip').innerHTML = html;
+}
+
+function renderTable() {
+  let html = '';
+  
+  for (let m = 0; m < 12; m++) {
+    const budget = getBudget(m);
+    const rowTotal = getRowTotal(m);
+    const saldo = budget - rowTotal;
+    
+    html += `<tr>`;
+    html += `<td class="month-cell">${MONTHS[m]}<br><span class="season-tag season-${SEASONS[m]}">${SEASON_LABELS[SEASONS[m]]}</span></td>`;
+    html += `<td class="meta-cell">${fmtShort(METAS[m])}</td>`;
+    html += `<td class="budget-cell">${fmtShort(budget)}</td>`;
+    
+    for (let c = 0; c < CHANNELS.length; c++) {
+      const borderClass = (c === 0 || c === 4 || c === 7 || c === 8 || c === 10 || c === 12) ? 'border-left:2px solid var(--border);' : '';
+      html += `<td class="editable-cell" style="${borderClass}">
+        <input type="text" value="${fmtShort(channelValues[m][c])}" 
+               data-month="${m}" data-channel="${c}"
+               onfocus="this.select()" 
+               onblur="updateCell(this)"
+               onkeydown="if(event.key==='Enter'){this.blur();}">
+      </td>`;
+    }
+    
+    const totalStyle = rowTotal > budget ? 'color:var(--red)' : 'color:var(--green)';
+    const saldoStyle = saldo < 0 ? 'color:var(--red)' : 'color:var(--text-dim)';
+    
+    html += `<td style="border-left:2px solid var(--border); font-weight:700; ${totalStyle}">${fmtShort(rowTotal)}</td>`;
+    html += `<td style="${saldoStyle}; font-weight:600;">${fmtShort(saldo)}</td>`;
+    html += `</tr>`;
+  }
+  
+  // Total row
+  html += `<tr class="total-row">`;
+  html += `<td class="month-cell" style="font-size:0.85rem;">TOTAL 2026</td>`;
+  html += `<td class="meta-cell">${fmtShort(TOTAL_ANUAL)}</td>`;
+  html += `<td class="budget-cell">${fmtShort(getTotalBudget())}</td>`;
+  
+  for (let c = 0; c < CHANNELS.length; c++) {
+    const borderClass = (c === 0 || c === 4 || c === 7 || c === 8 || c === 10 || c === 12) ? 'border-left:2px solid var(--border);' : '';
+    html += `<td style="${borderClass}">${fmtShort(getColTotal(c))}</td>`;
+  }
+  
+  const grandTotal = getGrandTotal();
+  const totalBudget = getTotalBudget();
+  const grandSaldo = totalBudget - grandTotal;
+  
+  html += `<td style="border-left:2px solid var(--border); color:var(--green);">${fmtShort(grandTotal)}</td>`;
+  html += `<td style="color:${grandSaldo < 0 ? 'var(--red)' : 'var(--text-dim)'};">${fmtShort(grandSaldo)}</td>`;
+  html += `</tr>`;
+  
+  // Percentage row
+  html += `<tr class="total-row">`;
+  html += `<td class="month-cell" style="font-size:0.75rem;">% del Total</td>`;
+  html += `<td>100%</td>`;
+  html += `<td class="budget-cell">${budgetPct}%</td>`;
+  
+  for (let c = 0; c < CHANNELS.length; c++) {
+    const borderClass = (c === 0 || c === 4 || c === 7 || c === 8 || c === 10 || c === 12) ? 'border-left:2px solid var(--border);' : '';
+    const pct = totalBudget > 0 ? ((getColTotal(c) / totalBudget) * 100).toFixed(1) : '0.0';
+    html += `<td style="${borderClass}; color:var(--text-dim); font-size:0.68rem;">${pct}%</td>`;
+  }
+  
+  html += `<td style="border-left:2px solid var(--border);">${totalBudget > 0 ? ((grandTotal/totalBudget)*100).toFixed(1) : 0}%</td>`;
+  html += `<td></td>`;
+  html += `</tr>`;
+  
+  document.getElementById('tableBody').innerHTML = html;
+}
+
+function renderValidation() {
+  const totalBudget = getTotalBudget();
+  const totalAssigned = getGrandTotal();
+  const diff = totalBudget - totalAssigned;
+  const pctUsed = totalBudget > 0 ? ((totalAssigned / totalBudget) * 100).toFixed(1) : 0;
+  
+  // Check high vs low season allocation
+  const budgets = getRedistributedBudgets();
+  const highSeason = budgets[0] + budgets[1] + budgets[10] + budgets[11];
+  const lowSeason = budgets[2] + budgets[3] + budgets[4] + budgets[5] + budgets[6] + budgets[7];
+  const highPct = ((highSeason / totalBudget) * 100).toFixed(0);
+  const lowPct = ((lowSeason / totalBudget) * 100).toFixed(0);
+  
+  let overMonths = [];
+  for (let m = 0; m < 12; m++) {
+    if (getRowTotal(m) > getBudget(m)) overMonths.push(MONTHS[m]);
+  }
+  
+  let items = '';
+  
+  if (diff >= 0) {
+    items += `<div class="validation-item"><div class="validation-dot dot-ok"></div> Presupuesto OK: ${pctUsed}% asignado</div>`;
+  } else {
+    items += `<div class="validation-item"><div class="validation-dot dot-err"></div> ¡Excedido en ${fmtFull(Math.abs(diff))}!</div>`;
+  }
+  
+  if (overMonths.length > 0) {
+    items += `<div class="validation-item"><div class="validation-dot dot-warn"></div> Meses excedidos: ${overMonths.join(', ')}</div>`;
+  } else {
+    items += `<div class="validation-item"><div class="validation-dot dot-ok"></div> Ningún mes excedido</div>`;
+  }
+  
+  items += `<div class="validation-item"><div class="validation-dot ${diff > totalBudget * 0.1 ? 'dot-warn' : 'dot-ok'}"></div> Saldo disponible: ${fmtFull(Math.max(0, diff))}</div>`;
+  items += `<div class="validation-item"><div class="validation-dot dot-ok"></div> Alta (Ene-Feb+Nov-Dic): ${highPct}% · Baja (Mar-Ago): ${lowPct}%</div>`;
+  
+  document.getElementById('validationBar').innerHTML = items;
+}
+
+function renderAll() {
+  renderSummary();
+  renderCalendar();
+  renderTable();
+  renderValidation();
+  renderTools();
+}
+
+// ==================== INTERACTIONS ====================
+function updateCell(input) {
+  const m = parseInt(input.dataset.month);
+  const c = parseInt(input.dataset.channel);
+  const raw = input.value.replace(/[^0-9\-]/g, '');
+  const val = parseInt(raw) || 0;
+  channelValues[m][c] = val;
+  input.value = fmtShort(val);
+  renderSummary();
+  renderCalendar();
+  renderValidation();
+  
+  // Update totals in same row
+  const row = input.closest('tr');
+  const cells = row.querySelectorAll('td');
+  const budget = getBudget(m);
+  const rowTotal = getRowTotal(m);
+  const saldo = budget - rowTotal;
+  
+  // Update total and saldo columns (last 2 tds)
+  const totalTd = cells[cells.length - 2];
+  const saldoTd = cells[cells.length - 1];
+  totalTd.textContent = fmtShort(rowTotal);
+  totalTd.style.color = rowTotal > budget ? 'var(--red)' : 'var(--green)';
+  saldoTd.textContent = fmtShort(saldo);
+  saldoTd.style.color = saldo < 0 ? 'var(--red)' : 'var(--text-dim)';
+  
+  // Refresh total row
+  renderTable();
+}
+
+function recalcAll() {
+  budgetPct = parseFloat(document.getElementById('pctInput').value) || 1.0;
+  initValues();
+  renderAll();
+}
+
+function resetAll() {
+  document.getElementById('pctInput').value = '1.0';
+  toolValues = TOOLS.map(t => t.monthly);
+  initValues();
+  renderAll();
+}
+
+function exportCSV() {
+  let csv = 'MES,META VENTA,PPTO MKT ('+budgetPct+'%)';
+  CHANNELS.forEach(ch => csv += ',' + ch.name);
+  csv += ',TOTAL ASIGNADO,SALDO\n';
+  
+  for (let m = 0; m < 12; m++) {
+    csv += MONTHS[m] + ',' + METAS[m] + ',' + getBudget(m);
+    for (let c = 0; c < CHANNELS.length; c++) {
+      csv += ',' + channelValues[m][c];
+    }
+    csv += ',' + getRowTotal(m) + ',' + (getBudget(m) - getRowTotal(m));
+    csv += '\n';
+  }
+  
+  csv += 'TOTAL,' + TOTAL_ANUAL + ',' + getTotalBudget();
+  for (let c = 0; c < CHANNELS.length; c++) {
+    csv += ',' + getColTotal(c);
+  }
+  csv += ',' + getGrandTotal() + ',' + (getTotalBudget() - getGrandTotal()) + '\n';
+  
+  csv += '\n\nHERRAMIENTAS Y PLATAFORMAS DIGITALES\n';
+  csv += 'HERRAMIENTA,CATEGORÍA,COSTO MENSUAL CLP,COSTO ANUAL CLP,USD/MES REF,DETALLE\n';
+  TOOLS.forEach((tool, i) => {
+    csv += `"${tool.name}","${tool.cat}",${toolValues[i]},${toolValues[i]*12},${tool.usd},"${tool.detail}"\n`;
+  });
+  const totalTools = toolValues.reduce((a,b) => a+b, 0);
+  csv += `TOTAL HERRAMIENTAS,,${totalTools},${totalTools*12},${Math.round(totalTools/950)},\n`;
+  csv += `\nRESUMEN GENERAL\n`;
+  csv += `Presupuesto Marketing Anual (${budgetPct}%),${getTotalBudget()}\n`;
+  csv += `Herramientas Anuales,${totalTools*12}\n`;
+  csv += `TOTAL MKT + HERRAMIENTAS,${getTotalBudget() + totalTools*12}\n`;
+  csv += `% sobre Venta Anual,${(((getTotalBudget() + totalTools*12) / TOTAL_ANUAL) * 100).toFixed(2)}%\n`;
+  
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'Plan_Marketing_2026_Radisson_ParkInn.csv';
+  link.click();
+}
+
+// ==================== TOOLS / PLATFORMS ====================
+const TOOLS = [
+  { name: 'GoHighLevel CRM', cat: 'CRM & Automatización', monthly: 285000, usd: 297, detail: 'Plan Unlimited: CRM, funnels, automaciones, chatbots, email, sub-accounts ilimitadas' },
+  { name: 'GHL — Consumo SMS/WhatsApp', cat: 'CRM & Automatización', monthly: 50000, usd: 52, detail: 'Consumo variable: SMS + WhatsApp API via Twilio/LC Phone. Estimado 500-800 msgs/mes' },
+  { name: 'GHL — Consumo Email', cat: 'CRM & Automatización', monthly: 15000, usd: 16, detail: 'Envío masivo newsletters + automaciones. ~20.000 emails/mes via Mailgun' },
+  { name: 'WhatsApp Business API', cat: 'Comunicación', monthly: 35000, usd: 37, detail: 'Cuenta oficial verificada + mensajes template. Costo por conversación Meta' },
+  { name: 'Vercel (Hosting)', cat: 'Desarrollo Web', monthly: 20000, usd: 20, detail: 'Hosting aplicaciones web, landing pages, micrositios. Plan Pro' },
+  { name: 'v0 by Vercel (AI Dev)', cat: 'Desarrollo Web', monthly: 20000, usd: 20, detail: 'Generación de interfaces y componentes web con IA. Plan Premium' },
+  { name: 'APIs IA (OpenAI / Claude)', cat: 'Inteligencia Artificial', monthly: 45000, usd: 47, detail: 'Consumo APIs para chatbots, generación contenido, análisis datos. Variable según uso' },
+  { name: 'Dominio & DNS', cat: 'Desarrollo Web', monthly: 8000, usd: 8, detail: 'Dominios .cl + .com para ambos hoteles + DNS management' },
+  { name: 'Canva Pro (Diseño)', cat: 'Contenido', monthly: 13000, usd: 13, detail: 'Diseño gráfico para RRSS, presentaciones, material impreso. Plan Team' },
+  { name: 'Zapier / Make', cat: 'Automatización', monthly: 20000, usd: 21, detail: 'Integraciones entre Oracle PMS, GHL, Google Sheets, WhatsApp, etc.' },
+  { name: 'Reserva / Contingencia', cat: 'Otros', monthly: 50000, usd: 52, detail: 'Buffer para nuevas herramientas, upgrades, o consumos variables inesperados' }
+];
+
+let toolValues = TOOLS.map(t => t.monthly);
+
+function renderTools() {
+  let html = '';
+  let totalMonthly = 0;
+  
+  TOOLS.forEach((tool, i) => {
+    const val = toolValues[i];
+    totalMonthly += val;
+    const catColors = {
+      'CRM & Automatización': 'var(--accent)',
+      'Comunicación': 'var(--green)',
+      'Desarrollo Web': 'var(--cyan)',
+      'Inteligencia Artificial': 'var(--pink)',
+      'Marketing Digital': 'var(--amber)',
+      'Contenido': '#a78bfa',
+      'Productividad': 'var(--text-dim)',
+      'Email Marketing': '#fb923c',
+      'Analytics': '#2dd4bf',
+      'Automatización': '#c084fc',
+      'Otros': 'var(--text-dim)'
+    };
+    const catColor = catColors[tool.cat] || 'var(--text-dim)';
+    
+    html += `<tr>
+      <td style="text-align:left; font-family:'DM Sans',sans-serif; font-weight:600; padding-left:1rem;">${tool.name}</td>
+      <td><span style="font-size:0.65rem; padding:0.15rem 0.5rem; border-radius:4px; background:rgba(255,255,255,0.05); color:${catColor}; font-weight:600;">${tool.cat}</span></td>
+      <td class="editable-cell">
+        <input type="text" value="${fmtShort(val)}" data-tool="${i}" 
+               onfocus="this.select()" onblur="updateTool(this)" onkeydown="if(event.key==='Enter'){this.blur();}">
+      </td>
+      <td style="color:var(--text-dim);">${fmtShort(val * 12)}</td>
+      <td style="color:var(--text-dim); font-size:0.68rem;">~$${tool.usd}</td>
+      <td style="text-align:left; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:var(--text-dim); max-width:350px;">${tool.detail}</td>
+    </tr>`;
+  });
+  
+  // Total row
+  html += `<tr class="total-row">
+    <td style="text-align:left; padding-left:1rem; font-size:0.85rem;">TOTAL HERRAMIENTAS</td>
+    <td>${TOOLS.length} plataformas</td>
+    <td class="budget-cell">${fmtShort(totalMonthly)}</td>
+    <td style="color:var(--amber); font-weight:700;">${fmtShort(totalMonthly * 12)}</td>
+    <td style="color:var(--text-dim);">~$${Math.round(totalMonthly / 950)}</td>
+    <td style="text-align:left; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:var(--text-dim);">Costo fijo mensual infraestructura tecnológica</td>
+  </tr>`;
+  
+  document.getElementById('toolsBody').innerHTML = html;
+  
+  // Summary
+  const totalAnnualTools = totalMonthly * 12;
+  const totalMktBudget = getTotalBudget();
+  const grandTotalWithTools = totalMktBudget + totalAnnualTools;
+  const toolsPctOfSales = ((totalAnnualTools / TOTAL_ANUAL) * 100).toFixed(2);
+  const grandPctOfSales = ((grandTotalWithTools / TOTAL_ANUAL) * 100).toFixed(2);
+  
+  document.getElementById('toolsSummary').innerHTML = `
+    <div class="validation-item"><div class="validation-dot dot-ok"></div> <strong>Herramientas/mes:</strong> ${fmtFull(totalMonthly)}</div>
+    <div class="validation-item"><div class="validation-dot dot-ok"></div> <strong>Herramientas/año:</strong> ${fmtFull(totalAnnualTools)} (${toolsPctOfSales}% de venta)</div>
+    <div class="validation-item" style="border-left:1px solid var(--border); padding-left:1rem;">
+      <div class="validation-dot" style="background:var(--amber); box-shadow:0 0 6px rgba(245,158,11,0.5);"></div>
+      <strong>TOTAL MKT + Herramientas:</strong> ${fmtFull(grandTotalWithTools)} (${grandPctOfSales}% de venta anual)
+    </div>
+  `;
+}
+
+function updateTool(input) {
+  const i = parseInt(input.dataset.tool);
+  const raw = input.value.replace(/[^0-9\-]/g, '');
+  const val = parseInt(raw) || 0;
+  toolValues[i] = val;
+  input.value = fmtShort(val);
+  renderTools();
+}
+
+// ==================== INIT ====================
+initValues();
+renderAll();
+</script>
+
+</body>
+</html>

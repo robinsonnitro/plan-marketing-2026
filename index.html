@@ -524,7 +524,7 @@ tbody td.budget-cell {
   <div class="badge-row">
     <span class="badge badge-radisson">Radisson Puerto Varas · 98 Hab</span>
     <span class="badge badge-parkinn">Park Inn by Radisson · 86 Hab</span>
-    <span class="badge badge-budget">1% venta anual · Redistribuido: -60% en alta, +60% en baja</span>
+    <span class="badge badge-budget">1% venta anual · </span>
   </div>
 </div>
 
@@ -570,7 +570,7 @@ tbody td.budget-cell {
           <th colspan="2" style="border-left:2px solid var(--border);"><span class="ch-group ch-eventos">EVENTOS & PRESENCIA</span></th>
           <th colspan="2" style="border-left:2px solid var(--border);"><span class="ch-group ch-cyber">CAMPAÑAS ESPECIALES</span></th>
           <th rowspan="2" style="border-left:2px solid var(--border); min-width:90px;">TOTAL<br>ASIGNADO</th>
-          <th rowspan="2" style="min-width:80px;">SALDO</th>
+          
         </tr>
         <tr>
           <th class="channel-header" style="border-left:2px solid var(--border);">Google Ads<br>(SEM)</th>
@@ -931,7 +931,7 @@ function renderSummary() {
     <div class="summary-card low">
       <div class="summary-label">Mayo (Baja) → Aumentado</div>
       <div class="summary-value" style="color:var(--cyan);">${fmtFull(redirMay)}</div>
-      <div class="summary-sub">vs ${fmtFull(flatMay)} sin redistribuir (+${Math.round((redirMay/flatMay - 1)*100)}%)</div>
+      <div class="summary-sub"
     </div>
     <div class="summary-card" style="position:relative;overflow:hidden;">
       <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--amber));"></div>
@@ -1005,7 +1005,7 @@ function renderTable() {
   const grandSaldo = totalBudget - grandTotal;
   
   html += `<td style="border-left:2px solid var(--border); color:var(--green);">${fmtShort(grandTotal)}</td>`;
-  html += `<td style="color:${grandSaldo < 0 ? 'var(--red)' : 'var(--text-dim)'};">${fmtShort(grandSaldo)}</td>`;
+  
   html += `</tr>`;
   
   // Percentage row
@@ -1021,7 +1021,7 @@ function renderTable() {
   }
   
   html += `<td style="border-left:2px solid var(--border);">${totalBudget > 0 ? ((grandTotal/totalBudget)*100).toFixed(1) : 0}%</td>`;
-  html += `<td></td>`;
+  
   html += `</tr>`;
   
   document.getElementById('tableBody').innerHTML = html;
